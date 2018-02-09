@@ -10,18 +10,18 @@ jobs:
             - run:
                 name: update-npm
                 command: 'sudo npm install -g npm@latest'
-            # - restore_cache:
-            #     key: dependency-cache-{{ checksum "package.json" }}
-            # - run:
-            #     name: install-npm
-            #     command: npm install
-            # - save_cache:
-            #     key: dependency-cache-{{ checksum "package.json" }}
-            #     paths:
-            #         - ./node_modules
-            # - run:
-            #     name: run test
-            #     command: npm test
+            - restore_cache:
+                key: dependency-cache-{{ checksum "package.json" }}
+            - run:
+                name: install-npm
+                command: npm install
+            - save_cache:
+                key: dependency-cache-{{ checksum "package.json" }}
+                paths:
+                    - ./node_modules
+            - run:
+                name: run test
+                command: npm test
             # - run:
             #     name: code-coverage
             #     command: './node_modules/.bin/nyc report --reporter=text-lcov'
