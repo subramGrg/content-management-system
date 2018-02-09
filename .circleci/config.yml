@@ -9,7 +9,7 @@ jobs:
             - checkout
             - run:
                 name: update-npm
-                command: node -v
+                command: npm -v
             # - restore_cache:
             #     key: dependency-cache-{{ checksum "package.json" }}
             # - run:
