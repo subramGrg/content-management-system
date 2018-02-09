@@ -9,12 +9,12 @@ jobs:
             - checkout
             - run:
                 name: update-npm
-                command: npm -v
+                command: 'sudo npm install -g npm@latest'
             # - restore_cache:
             #     key: dependency-cache-{{ checksum "package.json" }}
-            # - run:
-            #     name: install-npm
-            #     command: npm i
+            - run:
+                name: install-npm
+                command: npm -v
             # - save_cache:
             #     key: dependency-cache-{{ checksum "package.json" }}
             #     paths:
