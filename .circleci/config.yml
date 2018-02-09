@@ -14,6 +14,9 @@ jobs:
             #     key: dependency-cache-{{ checksum "package.json" }}
             - run:
                 name: install-npm
+                command: which npm
+            - run:
+                name: install-npm
                 command: npm -v
             # - save_cache:
             #     key: dependency-cache-{{ checksum "package.json" }}
