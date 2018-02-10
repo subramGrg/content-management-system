@@ -1,7 +1,9 @@
-## Specification
+### CMS
 
+![](https://img.shields.io/badge/react-v16.2.0-red.svg)
 ![](https://circleci.com/gh/subramGrg/content-management-system/tree/master.svg?style=shield)
 
-* React 16
+### Specification
+
 * Node 8.1.3
 * Webpack 3.10
