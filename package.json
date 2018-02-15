@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
+    "test": "echo \"Errors: no test specified\"",
     "build-dev": "./node_modules/.bin/webpack --watch",
     "start": "node server.js"
   },
