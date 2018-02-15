@@ -35,7 +35,7 @@ class Form extends React.Component {
     render() {
         return(
             <MuiThemeProvider>
-                <div className="new-user-form">
+                <div className="new-user-forms">
                     <form
                         method="POST"
                         id="new-user"
