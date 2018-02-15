@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 // static file location
 // app.use(express.static(`${__dirname}/dist`));
-app.get("/", (req, res) => (res.send("hello world")));
+app.get("/", (req, res) => (res.send(PORT)));
 
 app.listen(PORT, () => {
     console.log(`server is up in ${PORT}`);
