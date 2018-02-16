@@ -1,7 +1,9 @@
 import React from "react";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import TextField from "material-ui/TextField";
-import FlatButton from "material-ui/FlatButton";
+import RaisedButton from "material-ui/RaisedButton";
+import styles from "../styles/Form.scss";
+import CSSModules from "react-css-modules";
 
 class Form extends React.Component {
     constructor(props) {
@@ -35,16 +37,18 @@ class Form extends React.Component {
     render() {
         return(
             <MuiThemeProvider>
-                <div className="new-user-forms">
+                <div styleName="new-user-forms">
                     <form
                         method="POST"
-                        id="new-user"
+                        styleName="new-user"
                         onSubmit={this.submitForm}
                     >
+                        <h3>Details of book:</h3>
                         <fieldset>
                             <TextField name="name"
                                 hintText="Book name"
                                 onBlur={this.handleBlur}
+                                fullWidth={true}
                             />
                         </fieldset>
 
@@ -52,10 +56,11 @@ class Form extends React.Component {
                             <TextField name="author"
                                 hintText="Author name"
                                 onBlur={this.handleBlur}
+                                fullWidth={true}
                             />
                         </fieldset>
 
-                        <FlatButton
+                        <RaisedButton
                             type="submit"
                             label="Submit"
                         />
@@ -66,4 +71,4 @@ class Form extends React.Component {
     }
 }
 
-export default Form;
+export default CSSModules(Form, styles);

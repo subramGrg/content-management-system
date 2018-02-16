@@ -1,0 +1,13 @@
+.new-user-forms {
+    width: 300px;
+    margin: 0 auto;
+
+    fieldset {
+        margin: 0 0 20px;
+    }
+}
+
+.new-user {
+    display: flex;
+    flex-direction: column;
+}
