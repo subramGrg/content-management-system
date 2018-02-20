@@ -1,12 +1,15 @@
 import React from "react";
-import Form from "./Form.jsx";
+import Header from "./Header.jsx";
+import Body from "./Body.jsx";
+
 import ConnectedForm from "../containers/connectedForm";
 import general from "../styles/general.scss";
 
 const App = () => (
-    <main>
-        <ConnectedForm />
-    </main>
+    <React.Fragment>
+        <Header />
+        <Body />
+    </React.Fragment>
 );
 
 export default App;
