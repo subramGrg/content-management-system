@@ -10,11 +10,13 @@
     "test": "echo \"Error: no test specified\"",
     "build-dev": "./node_modules/.bin/webpack --config webpack.dev.js --watch",
     "build-prod": "./node_modules/.bin/webpack --config webpack.prod.js --watch",
-    "start": "node server.js"
+    "start": "node server.js",
+    "babel": "./node_modules/.bin/babel src -d functions/src && ./node_modules/.bin/babel server.js -d functions"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
