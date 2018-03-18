@@ -1,13 +1,18 @@
+import React from "react";
 import { createStore, applyMiddleware } from "redux";
-import reducer from "../reducers";
+import { Provider } from "react-redux";
+import reducers from "../reducers";
 import logger from "redux-logger";
+import thunk from "redux-thunk";
 
-const initialState = {
-    books: [],
-};
+import { RegionConnected } from "../regions";
 
-const store = createStore(
-    reducer, initialState, applyMiddleware(logger)
+const store = createStore(reducers, applyMiddleware(logger, thunk));
+
+export default () => (
+    <React.Fragment>
+        <Provider store={store}>
+            <RegionConnected />
+        </Provider>
+    </React.Fragment>
 );
-
-export default store;

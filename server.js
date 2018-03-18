@@ -1,15 +1,16 @@
-const express = require("express");
-const history = require("connect-history-api-fallback");
-const react = require("react");
-const renderToString = require("react-dom/server");
+import express from "express";
+import history from "connect-history-api-fallback";
+import react from "react";
+import ReactDOMServer from "react-dom/server";
+import App from "./src/components/App.js";
 
 const PORT = process.env.PORT || 3000;
 // create app
 const app = express();
 // static file location
 app.use(history()); // this gets executed first
-app.get("**", (res, req) => {
-    const html = renderToString("./src/components/App.jsx");
+app.get("**", (req, res) => {
+    const html = ReactDOMServer.renderToString(<App />);
     res.send(html);
 });
 
