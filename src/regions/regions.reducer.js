@@ -6,17 +6,17 @@ import {
 } from "../actionTypes";
 
 const initState = {
-    payload: null,
+    regions: [],
     loadSpinner: true,
 };
 
-export const regions = (region = initState, action) => {
+export const regionsReducer = (state = initState, action) => {
     switch (action.type) {
         case FETCH_REGIONS:
-            return { region, ...action.payload, };
+            return { ...state, regions: [...action.payload], };
         case LOAD_SPINNER:
-            return { region, ...action.loadSpinner, };
+            return { ...state, loadSpinner: action.loadSpinner, };
         default:
-            return region;
+            return state;
     }
 };

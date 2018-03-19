@@ -5,19 +5,23 @@ class Region extends React.Component {
         super(props);
     }
 
+    componentWillMount() {
+        this.props.getRegions();
+    };
+
     render() {
         const {
             loadSpinner,
-            getRegions,
+            regions,
         } = this.props;
-
         let content;
 
         if(loadSpinner) {
-            debugger;
             content = "loading";
         } else {
-            content = <button onClick={getRegions}>show region</button>;
+            content = regions.map(
+                region => <div key={region.ID}>{region.Name}</div>
+            );
         }
 
         return(

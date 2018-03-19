@@ -2,20 +2,15 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { Region } from "./regions.component";
-import { getRegions } from "./regions.actionCreators";
+import * as regionActions from "./regions.actionCreators";
 
 const mapDispatchToProps = dispatch => (
     bindActionCreators({
-        getRegions,
+        ...regionActions,
     }, dispatch)
 );
 
-const mapStateToProps = state => (
-    {
-        regions: state.regions,
-        loadSpinner: state.loadSpinner,
-    }
-);
+const mapStateToProps = state => ({ ...state.regionsReducer, });
 
 export const RegionConnected = connect(
     mapStateToProps, mapDispatchToProps

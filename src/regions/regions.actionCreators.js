@@ -30,6 +30,6 @@ export const getRegions = () => ((dispatch) => {
         authorization: process.env.AUTHORIZATION,
     }).then((data) => {
         dispatch(regions(SET_REGIONS, data));
-        dispatch(spinner(STOP_SPINNER, false));
+        dispatch(spinner(LOAD_SPINNER, false));
     });
 });
